@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("26.1.2.build.+")
+    implementation("org.bstats:bstats-bukkit:3.2.1")
 }
 
 java {
@@ -30,8 +31,18 @@ tasks {
         jvmArgs("-Xms2G", "-Xmx2G", "-Dcom.mojang.eula.agree=true")
     }
 
+    shadowJar {
+        configurations = project.configurations.runtimeClasspath.map { setOf(it) }
+
+        dependencies {
+            exclude { it.moduleGroup != "org.bstats" }
+        }
+
+        relocate("org.bstats", project.group.toString())
+    }
+
     processResources {
-        val props = mapOf("version" to version, "description" to project.description)
+        val props = mapOf("version" to version , "description" to project.description )
         filesMatching("plugin.yml") {
             expand(props)
         }

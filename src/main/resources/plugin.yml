@@ -1,10 +1,10 @@
-name: PlayerSkills
+name: kSkills
 description: $description
 version: '${version}'
 
-main: dev.kwlew.playerSkills.PlayerSkills
+main: dev.kwlew.kskills.kSkills
 api-version: '26.1.2'
 load: POSTWORLD
 
-authors: [ kwlew ]
+authors: [kwlew, EmanuelPlaysDev]
 website: https://kwlew.dev
