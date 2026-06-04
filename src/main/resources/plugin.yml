@@ -8,3 +8,4 @@ load: POSTWORLD
 
 authors: [kwlew, EmanuelPlaysDev]
 website: https://kwlew.dev
+soft-depend: [ "PlaceholderAPI" ]

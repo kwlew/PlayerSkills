@@ -7,11 +7,13 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven("https://repo.extendedclip.com/releases/")
 }
 
 dependencies {
     paperweight.paperDevBundle("26.1.2.build.+")
     implementation("org.bstats:bstats-bukkit:3.2.1")
+    compileOnly("me.clip:placeholderapi:2.12.2")
 }
 
 java {
